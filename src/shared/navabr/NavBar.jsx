@@ -3,7 +3,8 @@ import { CgReadme } from "react-icons/cg";
 import { FaSchoolFlag } from "react-icons/fa6";
 import { GrGallery } from "react-icons/gr";
 import { HiOutlineAcademicCap, HiOutlineViewGrid } from "react-icons/hi";
-import { MdEventAvailable } from "react-icons/md";
+import { IoMdLogIn } from "react-icons/io";
+import { MdAppRegistration, MdEventAvailable } from "react-icons/md";
 import { RiHome9Line } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
 
@@ -104,6 +105,7 @@ const NavBar = () => {
             {/* Login button for larger screens */}
             <div className="navbar-end hidden lg:flex">
                 <a className="btn btn-lg bg-[#027afb] text-white border-none">
+                    <IoMdLogIn />
                     লগইন
                 </a>
             </div>
@@ -144,9 +146,11 @@ const NavBar = () => {
                 {/* Login Button inside drawer */}
                 <div className="p-5 flex flex-col gap-4">
                     <a className="btn btn-lg bg-[#027afb] text-white border-none w-full">
+                        <IoMdLogIn />
                         লগইন
                     </a>
                     <a className="btn btn-lg border-2 border-[#027afb] w-full text-[#027afb]">
+                        <MdAppRegistration />
                         রেজিস্টার
                     </a>
                 </div>
