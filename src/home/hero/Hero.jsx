@@ -33,7 +33,7 @@ const Hero = () => {
                         className="hero h-[600px] md:min-h-screen bg-cover bg-center relative"
                         style={{
                             backgroundImage:
-                                "url(https://i.ibb.co/SxtJdzT/school.jpg)",
+                                "url(https://i.ibb.co.com/DYd16TV/5680e4eb-33ea-48b7-85a1-a2c75c66651f.jpg)",
                             filter: "blur(2px)",
                         }}
                     >
@@ -58,8 +58,66 @@ const Hero = () => {
                         </div>
                     </div>
                 </div>
-                <div className="keen-slider__slide">2</div>
-                <div className="keen-slider__slide">3</div>
+                <div className="keen-slider__slide">
+                    <div
+                        className="hero h-[600px] md:min-h-screen bg-cover bg-center relative"
+                        style={{
+                            backgroundImage:
+                                "url(https://i.ibb.co.com/SxtJdzT/school.jpg)",
+                            filter: "blur(2px)",
+                        }}
+                    >
+                        {/* Hero Overlay */}
+                        <div className="hero-overlay bg-opacity-60"></div>
+                    </div>
+                    {/* Front content */}
+                    <div className="absolute inset-0 flex justify-center items-center text-neutral-content text-center w-full h-full">
+                        <div className="max-w-2xl">
+                            <h1 className="mb-5 text-4xl md:text-5xl font-bold text-white">
+                                আমাদের বিদ্যালয়ে আপনাকে স্বাগতম
+                            </h1>
+                            <p className="mb-5 text-white">
+                                আমাদের শ্রীরায়ের চর এস আই এম হাই স্কুল একটি
+                                উন্নত শিক্ষা ব্যবস্থা ও সৃজনশীল পরিবেশে
+                                ছাত্র-ছাত্রীদের মনোভাব ও দক্ষতা বিকাশের জন্য
+                                প্রতিজ্ঞাবদ্ধ।
+                            </p>
+                            <button className="btn btn-lg bg-[#027afb] text-white border-none shadow-none">
+                                আরো বিস্তারিত জানুন
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div className="keen-slider__slide">
+                    <div
+                        className="hero h-[600px] md:min-h-screen bg-cover bg-center relative"
+                        style={{
+                            backgroundImage:
+                                "url(https://i.ibb.co.com/q5FTsWz/c2acb51d-317b-4956-9b66-40d60f60ff4b.jpg)",
+                            filter: "blur(2px)",
+                        }}
+                    >
+                        {/* Hero Overlay */}
+                        <div className="hero-overlay bg-opacity-60"></div>
+                    </div>
+                    {/* Front content */}
+                    <div className="absolute inset-0 flex justify-center items-center text-neutral-content text-center w-full h-full">
+                        <div className="max-w-2xl">
+                            <h1 className="mb-5 text-4xl md:text-5xl font-bold text-white">
+                                আমাদের বিদ্যালয়ে আপনাকে স্বাগতম
+                            </h1>
+                            <p className="mb-5 text-white">
+                                আমাদের শ্রীরায়ের চর এস আই এম হাই স্কুল একটি
+                                উন্নত শিক্ষা ব্যবস্থা ও সৃজনশীল পরিবেশে
+                                ছাত্র-ছাত্রীদের মনোভাব ও দক্ষতা বিকাশের জন্য
+                                প্রতিজ্ঞাবদ্ধ।
+                            </p>
+                            <button className="btn btn-lg bg-[#027afb] text-white border-none shadow-none">
+                                আরো বিস্তারিত জানুন
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
