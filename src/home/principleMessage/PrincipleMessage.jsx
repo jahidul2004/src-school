@@ -44,10 +44,10 @@ const Academics = () => {
                     </div>
                     <div className="h-[25%] rounded-b-lg text-center p-4 bg-[#027afb]">
                         <h1 className="text-2xl font-bold text-white">
-                            আজিজুল ইসলাম আজিজ
+                            মোঃ নূর আজিজ
                         </h1>
                         <p className="text-white">
-                            অধ্যক্ষ, শ্রীরায়েরচর এস.আই.এম উচ্চ বিদ্যালয়
+                            অধ্যক্ষ(ভারপ্রাপ্ত), শ্রীরায়েরচর এস.আই.এম উচ্চ বিদ্যালয়
                         </p>
                     </div>
                 </div>

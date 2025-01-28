@@ -64,7 +64,7 @@ const NavBar = () => {
     );
 
     return (
-        <div className="navbar bg-base-100 p-5">
+        <div className="sticky top-0 z-10 navbar bg-base-100 p-5">
             <div className="navbar-start">
                 {/* Logo */}
                 <a className="text-2xl font-bold text-[#027afb] flex items-center gap-2">
