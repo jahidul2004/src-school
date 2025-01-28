@@ -2,6 +2,7 @@ import AboutUs from "../aboutUs/AboutUs";
 import Academics from "../principleMessage/PrincipleMessage";
 import Hero from "../hero/Hero";
 import Teachers from "../teachers/Teachers";
+import Events from "../events/Events";
 
 const Home = () => {
     return (
@@ -21,6 +22,10 @@ const Home = () => {
             {/* Teachers */}
             <Teachers></Teachers>
             {/* Teachers end */}
+
+            {/* Events */}
+            <Events></Events>
+            {/* Events end */}
         </div>
     );
 };
