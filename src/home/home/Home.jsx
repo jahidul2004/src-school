@@ -1,3 +1,4 @@
+import AboutUs from "../aboutUs/AboutUs";
 import Hero from "../hero/Hero";
 
 const Home = () => {
@@ -6,6 +7,10 @@ const Home = () => {
             {/* Hero */}
             <Hero></Hero>
             {/* Hero end */}
+
+            {/* About us */}
+            <AboutUs></AboutUs>
+            {/* About us end */}
         </div>
     );
 };
