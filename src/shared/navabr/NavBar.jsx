@@ -7,7 +7,7 @@ import { IoMdLogIn } from "react-icons/io";
 import { MdAppRegistration, MdEventAvailable } from "react-icons/md";
 import { RiHome9Line } from "react-icons/ri";
 import { RxCrossCircled } from "react-icons/rx";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -64,7 +64,7 @@ const NavBar = () => {
     );
 
     return (
-        <div className="sticky top-0 z-10 navbar bg-base-100 p-5">
+        <div className="sticky top-0 z-10 navbar bg-base-100 p-5 shadow-md">
             <div className="navbar-start">
                 {/* Logo */}
                 <a className="text-2xl font-bold text-[#027afb] flex items-center gap-2">
@@ -105,10 +105,10 @@ const NavBar = () => {
 
             {/* Login button for larger screens */}
             <div className="navbar-end hidden lg:flex">
-                <a className="btn btn-lg bg-[#027afb] text-white border-none">
+                <Link to={'/login'} className="btn btn-lg bg-[#027afb] text-white border-none">
                     <IoMdLogIn />
                     লগইন
-                </a>
+                </Link>
             </div>
 
             {/* Drawer for small screens */}
@@ -133,14 +133,14 @@ const NavBar = () => {
 
                 {/* Login Button inside drawer */}
                 <div className="p-5 flex flex-col gap-4">
-                    <a className="btn btn-lg bg-[#027afb] text-white border-none w-full">
+                    <Link to={'/login'} className="btn btn-lg bg-[#027afb] text-white border-none w-full">
                         <IoMdLogIn />
                         লগইন
-                    </a>
-                    <a className="btn btn-lg border-2 border-[#027afb] w-full text-[#027afb]">
+                    </Link>
+                    <Link to={'/register'} className="btn btn-lg border-2 border-[#027afb] w-full text-[#027afb]">
                         <MdAppRegistration />
                         রেজিস্টার
-                    </a>
+                    </Link>
                 </div>
             </div>
 
