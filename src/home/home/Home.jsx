@@ -1,4 +1,5 @@
 import AboutUs from "../aboutUs/AboutUs";
+import Academics from "../principleMessage/PrincipleMessage";
 import Hero from "../hero/Hero";
 
 const Home = () => {
@@ -11,6 +12,10 @@ const Home = () => {
             {/* About us */}
             <AboutUs></AboutUs>
             {/* About us end */}
+
+            {/* Academics */}
+            <Academics></Academics>
+            {/* Academics end */}
         </div>
     );
 };

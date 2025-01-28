@@ -6,6 +6,7 @@ import { HiOutlineAcademicCap, HiOutlineViewGrid } from "react-icons/hi";
 import { IoMdLogIn } from "react-icons/io";
 import { MdAppRegistration, MdEventAvailable } from "react-icons/md";
 import { RiHome9Line } from "react-icons/ri";
+import { RxCrossCircled } from "react-icons/rx";
 import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
@@ -119,26 +120,13 @@ const NavBar = () => {
                 {/* Cross icon to close the drawer */}
                 <div className="absolute top-5 right-5">
                     <button onClick={toggleMenu} className="text-xl">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-6 w-6"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M6 18L18 6M6 6l12 12"
-                            />
-                        </svg>
+                        <RxCrossCircled className="text-3xl text-white" />
                     </button>
                 </div>
 
-                <ul className="menu p-5 text-lg">
-                    <h1 className="text-3xl font-semibold pr-5 text-center mb-8 text-[#027afb]">
-                        শ্রীরায়েরচর এস আই এম উচ্চ বিদ্যালয়
+                <ul className="menu text-lg">
+                    <h1 className="text-3xl font-semibold pr-8 text-center mb-8 bg-[#027afb] p-4 text-white rounded-lg">
+                        শ্রীরায়েরচর এস আই এম উচ্চ বিদ্যালয়।
                     </h1>
                     {links}
                 </ul>

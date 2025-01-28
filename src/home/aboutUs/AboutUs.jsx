@@ -1,7 +1,7 @@
 const AboutUs = () => {
     return (
         <div className="my-10">
-            <h1 className="text-3xl md:text-4xl font-bold text-center my-5 md:my-8 py-5 bg-[#027afb] border-2 mx-2 md:mx-4 rounded-lg text-white">
+            <h1 className="text-3xl md:text-4xl font-bold text-center my-5 md:my-8 py-5   mx-2 md:mx-4 rounded-lg bg-gradient-to-r from-[#027afb]">
                 আমাদের সম্পর্কে
             </h1>
 
@@ -57,6 +57,12 @@ const AboutUs = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div className="flex justify-center items-center mt-5 md:mt-10">
+                <button className="btn btn-lg bg-[#027afb] text-white border-none shadow-none">
+                    আরও জানুন...
+                </button>
             </div>
         </div>
     );
