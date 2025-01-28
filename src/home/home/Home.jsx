@@ -3,6 +3,7 @@ import Academics from "../principleMessage/PrincipleMessage";
 import Hero from "../hero/Hero";
 import Teachers from "../teachers/Teachers";
 import Events from "../events/Events";
+import Gallery from "../gallery/Gallery";
 
 const Home = () => {
     return (
@@ -26,6 +27,10 @@ const Home = () => {
             {/* Events */}
             <Events></Events>
             {/* Events end */}
+
+            {/* Gallery */}
+            <Gallery></Gallery>
+            {/* Gallery end */}
         </div>
     );
 };
