@@ -1,7 +1,7 @@
 const Teachers = () => {
     return (
         <div className="my-10 mx-2 md:mx-5">
-            <h1 className="text-3xl md:text-4xl font-bold text-center my-5 md:my-8 py-5 mx-2 md:mx-4 rounded-lg bg-gradient-to-r from-[#027afb]">
+            <h1 className="text-3xl md:text-4xl font-bold text-center my-5 md:my-8 py-5 mx-2 md:mx-4 rounded-lg bg-gradient-to-l from-[#027afb] to-[#00c2ff] text-white shadow-lg transform transition-all duration-500 hover:scale-105">
                 শিক্ষক মণ্ডলী
             </h1>
 
