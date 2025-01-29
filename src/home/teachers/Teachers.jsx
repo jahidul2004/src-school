@@ -22,7 +22,7 @@ const Teachers = () => {
                             উপধাক্ষ (পদার্থবিজ্ঞান) <br /> শ্রীরায়েরচর এস.আই.এম
                             উচ্চ বিদ্যালয়
                         </p>
-                        <button className="btn mt-4">আরো জানুন</button>
+                        <button className="btn mt-4 text-[#027afb]">আরো জানুন</button>
                     </div>
                 </div>
                 <div className="order-1 md:order-2 rounded-lg w-full bg-[#027afb1c]">
@@ -41,7 +41,7 @@ const Teachers = () => {
                             অধ্যক্ষ (ভারপ্রাপ্ত) <br /> শ্রীরায়েরচর এস.আই.এম
                             উচ্চ বিদ্যালয়
                         </p>
-                        <button className="btn mt-4">আরো জানুন</button>
+                        <button className="btn mt-4 text-[#027afb]">আরো জানুন</button>
                     </div>
                 </div>
                 <div className="order-1 md:order-2 rounded-lg w-full bg-[#027afb1c]">
@@ -60,7 +60,7 @@ const Teachers = () => {
                             সিনিওর শিক্ষক, (জীববিজ্ঞান) <br /> শ্রীরায়েরচর
                             এস.আই.এম উচ্চ বিদ্যালয়
                         </p>
-                        <button className="btn mt-4">আরো জানুন</button>
+                        <button className="btn mt-4 text-[#027afb]">আরো জানুন</button>
                     </div>
                 </div>
             </div>
