@@ -4,6 +4,7 @@ import Hero from "../hero/Hero";
 import Teachers from "../teachers/Teachers";
 import Events from "../events/Events";
 import Gallery from "../gallery/Gallery";
+import GuardiansComment from "../guardiansComment/GuardiansComment";
 
 const Home = () => {
     return (
@@ -31,6 +32,10 @@ const Home = () => {
             {/* Gallery */}
             <Gallery></Gallery>
             {/* Gallery end */}
+
+            {/* Guardians comment */}
+            <GuardiansComment></GuardiansComment>
+            {/* Guardians comment end */}
         </div>
     );
 };

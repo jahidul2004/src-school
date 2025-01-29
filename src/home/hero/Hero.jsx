@@ -1,129 +1,149 @@
-import { useEffect, useRef } from "react";
-import "keen-slider/keen-slider.min.css";
-import KeenSlider from "keen-slider";
+import { useEffect, useRef, useState } from "react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
 
 const Hero = () => {
-    const sliderRef = useRef(null);
-    const slider = useRef(null);
+    const [progress, setProgress] = useState(100);
+    const progressInterval = useRef(null);
+    const swiperRef = useRef(null);
+
+    const startProgress = () => {
+        let timeLeft = 5000;
+        setProgress(100);
+        progressInterval.current = setInterval(() => {
+            timeLeft -= 100;
+            setProgress((timeLeft / 5000) * 100);
+        }, 100);
+    };
 
     useEffect(() => {
-        // Initialize Keen Slider once the component is mounted
-        if (sliderRef.current) {
-            slider.current = new KeenSlider(sliderRef.current, {
-                loop: true, // Enables infinite loop
-                slidesPerView: 1, // Number of slides to show at once
-                spacing: 10, // Space between slides (optional)
-                autoplay: {
-                    delay: 5000, // 5 seconds per slide
-                    pauseOnHover: true, // Pause autoplay on hover
-                },
-                // Add any other Keen Slider options you need
-            });
-        }
-
-        return () => {
-            // Clean up when the component is unmounted
-            if (slider.current) {
-                slider.current.destroy();
-            }
-        };
-    }, []); // The empty array ensures this effect only runs on mount/unmount
+        startProgress();
+        return () => clearInterval(progressInterval.current);
+    }, []);
 
     return (
-        <div>
-            <div ref={sliderRef} className="keen-slider">
+        <div className="relative">
+            <Swiper
+                ref={swiperRef}
+                modules={[Autoplay, Pagination]}
+                autoplay={{ delay: 8000, disableOnInteraction: false }}
+                pagination={{ clickable: true }}
+                loop={true}
+                slidesPerView={1}
+                onSlideChange={() => startProgress()}
+                onMouseEnter={() => clearInterval(progressInterval.current)}
+                onMouseLeave={() => startProgress()}
+            >
                 {/* First Slide */}
-                <div className="keen-slider__slide">
+                <SwiperSlide>
                     <div
                         className="hero h-[600px] md:min-h-screen bg-cover bg-center relative"
                         style={{
                             backgroundImage:
                                 "url(https://i.ibb.co/DYd16TV/5680e4eb-33ea-48b7-85a1-a2c75c66651f.jpg)",
-                            filter: "blur(2px)",
                         }}
                     >
-                        {/* Hero Overlay */}
                         <div className="hero-overlay bg-opacity-60"></div>
-                    </div>
-                    {/* Front content */}
-                    <div className="absolute inset-0 flex justify-center items-center text-neutral-content text-center w-full h-full">
-                        <div className="max-w-2xl">
-                            <h1 className="mb-5 text-4xl md:text-5xl font-bold text-white">
-                                স্বাগতম আমাদের বিদ্যালয়ে
-                            </h1>
-                            <p className="mb-5 text-white">
-                                আমাদের বিদ্যালয় একাধিক কার্যক্রমের মাধ্যমে
-                                ছাত্র-ছাত্রীদের সামগ্রিক বিকাশের দিকে লক্ষ্য
-                                রাখে।
-                            </p>
-                            <button className="btn btn-lg bg-[#027afb] text-white border-none shadow-none">
-                                আরো বিস্তারিত জানুন
-                            </button>
+                        <div className="absolute inset-0 flex justify-center items-center text-center text-white backdrop-blur-[2px] bg-[#0003]">
+                            <div className="max-w-2xl">
+                                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-[#abcbec]">
+                                    <span>&#8220;</span>আমাদের বিদ্যালয়ে আপনাকে
+                                    স্বাগতম
+                                </h1>
+                                <p className="mb-5 text-[#f1f1f1]">
+                                    আমাদের বিদ্যালয় ছাত্র-ছাত্রীদের সামগ্রিক
+                                    বিকাশের দিকে লক্ষ্য রাখে। শিক্ষার পাশাপাশি
+                                    নৈতিকতা, শৃঙ্খলা ও নেতৃত্বের গুণাবলি বিকাশে
+                                    গুরুত্ব দেওয়া হয়। সহপাঠ্যক্রমিক কার্যক্রম,
+                                    যেমন খেলাধুলা, সাংস্কৃতিক অনুষ্ঠান ও বিজ্ঞান
+                                    মেলা আয়োজনের মাধ্যমে শিক্ষার্থীদের সৃজনশীলতা
+                                    ও দক্ষতা উন্নয়নে আমরা প্রতিশ্রুতিবদ্ধ।
+                                </p>
+                                <button className="btn btn-lg shadow-none bg-[#027afb] text-white border-none">
+                                    আরো বিস্তারিত জানুন
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-
+                </SwiperSlide>
                 {/* Second Slide */}
-                <div className="keen-slider__slide">
+                <SwiperSlide>
                     <div
                         className="hero h-[600px] md:min-h-screen bg-cover bg-center relative"
                         style={{
                             backgroundImage:
-                                "url(https://i.ibb.co/SxtJdzT/school.jpg)",
-                            filter: "blur(2px)",
+                                "url(https://i.ibb.co.com/SxtJdzT/school.jpg)",
                         }}
                     >
-                        {/* Hero Overlay */}
                         <div className="hero-overlay bg-opacity-60"></div>
-                    </div>
-                    {/* Front content */}
-                    <div className="absolute inset-0 flex justify-center items-center text-neutral-content text-center w-full h-full">
-                        <div className="max-w-2xl">
-                            <h1 className="mb-5 text-4xl md:text-5xl font-bold text-white">
-                                উন্নত শিক্ষা ও সুযোগ
-                            </h1>
-                            <p className="mb-5 text-white">
-                                শ্রীরায়ের চর এস আই এম হাই স্কুলে আমাদের
-                                ছাত্র-ছাত্রীরা আধুনিক প্রযুক্তি ও দক্ষ
-                                প্রশিক্ষণের মাধ্যমে সমৃদ্ধ হচ্ছে।
-                            </p>
-                            <button className="btn btn-lg bg-[#027afb] text-white border-none shadow-none">
-                                বিস্তারিত জানুন
-                            </button>
+                        <div className="absolute inset-0 flex justify-center items-center text-center text-white backdrop-blur-[2px] bg-[#0003]">
+                            <div className="max-w-2xl">
+                                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-[#abcbec]">
+                                    <span>&#8220;</span>একটি আলোকিত আগামী গড়ার
+                                    অঙ্গীকার
+                                </h1>
+                                <p className="mb-5 text-[#f1f1f1]">
+                                    আমাদের বিদ্যালয় ছাত্র-ছাত্রীদের সামগ্রিক
+                                    বিকাশের দিকে লক্ষ্য রাখে। শিক্ষার পাশাপাশি
+                                    নৈতিকতা, শৃঙ্খলা ও নেতৃত্বের গুণাবলি বিকাশে
+                                    গুরুত্ব দেওয়া হয়। সহপাঠ্যক্রমিক কার্যক্রম,
+                                    যেমন খেলাধুলা, সাংস্কৃতিক অনুষ্ঠান ও বিজ্ঞান
+                                    মেলা আয়োজনের মাধ্যমে শিক্ষার্থীদের সৃজনশীলতা
+                                    ও দক্ষতা উন্নয়নে আমরা প্রতিশ্রুতিবদ্ধ।
+                                </p>
+                                <button className="btn btn-lg shadow-none bg-[#027afb] text-white border-none">
+                                    আরো বিস্তারিত জানুন
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-
+                </SwiperSlide>
                 {/* Third Slide */}
-                <div className="keen-slider__slide">
+                <SwiperSlide>
                     <div
                         className="hero h-[600px] md:min-h-screen bg-cover bg-center relative"
                         style={{
                             backgroundImage:
-                                "url(https://i.ibb.co/q5FTsWz/c2acb51d-317b-4956-9b66-40d60f60ff4b.jpg)",
-                            filter: "blur(2px)",
+                                "url(https://i.ibb.co.com/q5FTsWz/c2acb51d-317b-4956-9b66-40d60f60ff4b.jpg)",
                         }}
                     >
-                        {/* Hero Overlay */}
                         <div className="hero-overlay bg-opacity-60"></div>
-                    </div>
-                    {/* Front content */}
-                    <div className="absolute inset-0 flex justify-center items-center text-neutral-content text-center w-full h-full">
-                        <div className="max-w-2xl">
-                            <h1 className="mb-5 text-4xl md:text-5xl font-bold text-white">
-                                দক্ষতা ও নেতৃত্বের পথে
-                            </h1>
-                            <p className="mb-5 text-white">
-                                আমাদের বিদ্যালয় শুধু শিক্ষার মাধ্যমে নয়, বরং
-                                নেতৃত্বের গুণাবলী এবং একাগ্রতার মাধ্যমে ছাত্রদের
-                                গড়ে তোলে।
-                            </p>
-                            <button className="btn btn-lg bg-[#027afb] text-white border-none shadow-none">
-                                আরও জানুন
-                            </button>
+                        <div className="absolute inset-0 flex justify-center items-center text-center text-white backdrop-blur-[2px] bg-[#0003]">
+                            <div className="max-w-2xl">
+                                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-[#abcbec]">
+                                    <span>&#8220;</span>শিক্ষা, সংস্কৃতি ও
+                                    সাফল্যের মিলনস্থল
+                                </h1>
+                                <p className="mb-5 text-[#f1f1f1]">
+                                    আমাদের বিদ্যালয় ছাত্র-ছাত্রীদের সামগ্রিক
+                                    বিকাশের দিকে লক্ষ্য রাখে। শিক্ষার পাশাপাশি
+                                    নৈতিকতা, শৃঙ্খলা ও নেতৃত্বের গুণাবলি বিকাশে
+                                    গুরুত্ব দেওয়া হয়। সহপাঠ্যক্রমিক কার্যক্রম,
+                                    যেমন খেলাধুলা, সাংস্কৃতিক অনুষ্ঠান ও বিজ্ঞান
+                                    মেলা আয়োজনের মাধ্যমে শিক্ষার্থীদের সৃজনশীলতা
+                                    ও দক্ষতা উন্নয়নে আমরা প্রতিশ্রুতিবদ্ধ।
+                                </p>
+                                <button className="btn btn-lg shadow-none bg-[#027afb] text-white border-none">
+                                    আরো বিস্তারিত জানুন
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </SwiperSlide>
+            </Swiper>
+
+            {/* Progress Bar */}
+            <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-400">
+                <div
+                    className="h-full bg-blue-500"
+                    style={{
+                        width: `${progress}%`,
+                        transition: "width 0.1s linear",
+                    }}
+                ></div>
             </div>
         </div>
     );
